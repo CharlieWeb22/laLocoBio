@@ -1,0 +1,415 @@
+@font-face {
+    font-family: 'impact';
+    src: url(/font/impact.ttf);
+    font-family: 'norton';
+    src: url(/font/norton.ttf);
+    font-family: 'lato';
+    src: url(/font/Lato-Light.ttf);
+}
+body{
+    margin:0;
+    padding:0;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/******* ACCUEIL ********/
+  /**EN TETE ACCUEIL **/
+    /* LOGO */ 
+#logo{
+    background-color:white;
+  }
+  #logo img{
+    height:130px;
+    width:130px;
+  }
+    /* TITRE LA LOCO BIO*/
+#titre_en_tete{
+    font-family: 'norton';
+    font-size: 90px;
+    width:auto;
+    height:auto;
+    color:#b43d03;
+    text-align: left;
+    border: none;
+    padding:0px 0px 0px 0;
+    line-height: 75px;
+    background-color: white;
+  }
+
+    /* SOUS-TITRE Epicerie Biologique Cooperative */
+#sous_titre{
+    display:flex;
+    align-items: flex-end;
+    font-size:22px;
+    color:#025102;
+    text-align: left;
+    font-family: 'impact';
+    padding-top:40px;
+    background-color: white;
+  }
+    /* TITRE EN TETE RESPONSIVE */
+#titre_en_tete_responsive{
+    font-family: 'norton';
+    font-size: 38px;
+    width:auto;
+    height:auto;
+    color:#b43d03;
+    text-align: left;
+    border: none;
+    padding:0px 0px 0px 0;
+    line-height: 20px;
+    background-color: white;
+}
+#responsive_header{
+    background-color: #87A713;
+}
+#responsive_header .navbar-custom .nav-item .nav-link, #responsive_header .navbar-custom .nav-item .dropdown-menu .dropdown-item {
+    text-align: center;
+    margin-right:10px;
+    font-size: 20px;
+}
+#responsive_header .navbar-custom .nav-item .dropdown-menu {
+    border: none;
+    border-radius:none;
+    background-color: #87A713;
+}
+  /* LIGNE VERTE */
+#green_line{
+    background-color: #87A713;
+    height:9px;
+    padding:0;
+  }
+/* CHANGEMENT DE LA COULEUR DU TEXTE :HOVER */
+.navbar-custom{
+    background-color:white;
+  }
+  .navbar-custom li a{
+    font-size:18px;
+    font-family:Arial, 'Gill Sans', sans-serif;
+  }
+/* Changement la couleur du lien */
+.navbar-custom .nav-item .nav-link {
+    color: #121212;
+    transition: all 0.4s ease-in-out;
+  }
+  /* Change la couleur de lien actif ou :hover */
+  .navbar-custom .nav-item.active .nav-link,
+  .navbar-custom .nav-item:hover .nav-link {
+    color: #9EB949;
+  }
+  /* Change the color of the dropdown of active or hovered links */
+.dropdown .dropdown-menu a:hover
+{
+  color: #87A713;
+  background-color: white;
+  border-color: #fff;
+}
+  /* MENU BURGER EN RESPONSIVE*/
+.btn-toggler-icon{
+    height:3px; /* création des lignes individuelle, une à une */
+    width:30px;
+    margin: 6px 0;
+    background-color:#87A713;
+    display:block; /* Si on oublie celui-là, ça ne marche pas! */
+}
+  /* LIGNE DE SEPARATION */
+.separator{
+  height: 2px;
+    width: 10%;
+    border: none;
+    box-shadow: none;
+    background-color: darkgray;
+    align-content: center;
+}
+  /* CAROUSEL BANNER  EN FORMAT ORDINATEUR ET TABLETTE PRO*/ 
+.carousel-item img{
+  height:400px;
+  object-fit: cover;
+}
+.carousel-caption{
+  margin-bottom:120px;
+}
+.carousel-caption h5{
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: Arial, 'Gill Sans', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px black;
+}
+  .carousel-caption p{
+  font-size: 25px;
+  font-family: Arial, 'Gill Sans', sans-serif;
+  text-shadow: 2px 2px 8px black;
+  }
+/* TEXTE REMPLACE BANNER EN FORMAT TABLETTE ET PORTABLE */
+#responsive_banner{
+  padding: 15px;
+
+}
+#responsive_banner h1{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+  .separator_welcome_message{
+    height: 2px;
+    width: 10%;
+    border: none;
+    box-shadow: none;
+    background-color: #025102;
+    align-content: center;
+  }
+
+/********************* LA COOPERATIVE **********************/
+
+/** CHANGEMENT DES COULEURS DE L'EN-TETE **/
+    /* BLUE LIGNE */
+  #blue_line{
+    background-color: #4C7689;
+    height:9px;
+  }
+
+    /* RESPONSIVE HEADER BLEU */
+#responsive_header_blue{
+  background-color: #4C7689;
+}
+#responsive_header_blue .navbar-custom .nav-item .nav-link, #responsive_header .navbar-custom .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  margin-right:10px;
+  font-size: 20px;
+}
+#responsive_header_blue .navbar-custom .nav-item .dropdown-menu {
+  border: none;
+  border-radius:none;
+  background-color: #4C7689;
+}
+
+  .btn-toggler-icon-blue{
+    height:3px; /* création des lignes individuelle, une à une */
+    width:30px;
+    margin: 6px 0;
+    background-color:#4C7689;
+    display:block; /* Si on oublie celui-là, ça ne marche pas! */
+}
+/************************** NOS PRODUCTEURS ***************************/
+  /* ORANGE LINE */
+#orange_line{
+  background-color: #F29900;
+  height:9px;
+}
+  /* RESPONSIVE HEADER PRODUCTEURS */
+#responsive_header_producteurs{
+  background-color: #F29900;
+}
+#responsive_header_producteurs .navbar-custom .nav-item .nav-link, #responsive_header .navbar-custom .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  margin-right:10px;
+  font-size: 20px;
+}
+#responsive_header_producteurs .navbar-custom .nav-item .dropdown-menu {
+  border: none;
+  border-radius:none;
+  background-color: #F29900;
+}
+
+  .btn-toggler-icon-orange{
+    height:3px; /* création des lignes individuelle, une à une */
+    width:30px;
+    margin: 6px 0;
+    background-color:#F29900;
+    display:block; /* Si on oublie celui-là, ça ne marche pas! */
+}
+/**************************** SUR COMMANDE ***************************/
+
+  /* RED LIGNE */
+ #red_line{
+  background-color: #B2332A;
+  height:9px;
+}  
+/* RESPONSIVE HEADER */
+#responsive_header_red{
+  background-color: #B2332A;
+}
+#responsive_header_red .navbar-custom .nav-item .nav-link, #responsive_header .navbar-custom .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  margin-right:10px;
+  font-size: 20px;
+}
+#responsive_header_red .navbar-custom .nav-item .dropdown-menu {
+  border: none;
+  border-radius:none;
+  background-color: #B2332A;
+}
+
+  .btn-toggler-icon-red{
+    height:3px; /* création des lignes individuelle, une à une */
+    width:30px;
+    margin: 6px 0;
+    background-color:#B2332A;
+    display:block; /* Si on oublie celui-là, ça ne marche pas! */
+}
+/* LIGNE DE SEPARATION ROUGE */
+.separator_red{
+  height: 2px;
+    width: 8%;
+    border: none;
+    box-shadow: none;
+    background-color: #CC3025;
+    align-content: center;
+}
+  /************************** RENDEZ-VOUS DU MOIS **************************/
+  /* LIGNE DE SEPARATION EN-TETE */
+  #light_blue_line{
+    background-color: #609EA5;
+     height:9px;
+   }
+    /* RESPONSIVE HEADER LIGHT BLUE */
+#responsive_header_light_blue{
+  background-color: #609EA5;
+}
+#responsive_header_light_blue .navbar-custom .nav-item .nav-link, #responsive_header .navbar-custom .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  margin-right:10px;
+  font-size: 20px;
+}
+#responsive_header_light_blue .navbar-custom .nav-item .dropdown-menu {
+  border: none;
+  border-radius:none;
+  background-color: #609EA5;
+}
+
+  .btn-toggler-icon-light-blue{
+    height:3px; /* création des lignes individuelle, une à une */
+    width:30px;
+    margin: 6px 0;
+    background-color:#609EA5;
+    display:block; /* Si on oublie celui-là, ça ne marche pas! */
+}
+
+  /*TEXTE SOULIGNE DANS ARTICLE*/
+.under{
+  text-decoration: underline grey;
+}
+
+/******* CONTACT *******/
+  /* YELLOW LINE */
+#yellow_line{
+  background-color: #FFCE0A;
+  height:9px;
+}
+/* RESPONSIVE HEADER YELLOW */
+#responsive_header_yellow{
+  background-color: #FFCE0A;
+}
+#responsive_header_yellow .navbar-custom .nav-item .nav-link, #responsive_header .navbar-custom .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  margin-right:10px;
+  font-size: 20px;
+}
+#responsive_header_yellow .navbar-custom .nav-item .dropdown-menu {
+  border: none;
+  border-radius:none;
+  background-color: #FFCE0A;
+}
+
+  .btn-toggler-icon-yellow{
+    height:3px; /* création des lignes individuelle, une à une */
+    width:30px;
+    margin: 6px 0;
+    background-color:#FFCE0A;
+    display:block; /* Si on oublie celui-là, ça ne marche pas! */
+}
+/* LIGNE DE SEPARATION */
+.separator_yellow{
+  height: 2px;
+    width: 20%;
+    border: none;
+    box-shadow: none;
+    background-color: #FFCE0A;
+    align-content: center;
+}
+
+/**************** COMMUN **************/
+/* FIL D'ARIANE */
+.fa-caret-right{
+  color:white;
+}
+.fa-home{
+  color:white;
+}
+.fa-facebook{
+  color:white;
+}
+#fil_ariane .btn-default{
+  color:white;
+}
+
+
+
+
+ /************ MEDIA QUERIES *********/
+ @media all and (max-width: 1353px){
+  /* TITRE LA LOCO BIO*/
+  #titre_en_tete{
+      font-size: 85px;
+    }
+  /* SOUS-TITRE Epicerie Biologique Cooperative */
+  #sous_titre{
+      font-size:18px;
+    }
+    /* LOGO */
+    #logo img{
+      height:115px;
+      width:115px;
+    }
+    .navbar-custom li a{
+      font-size:15px;
+    }
+  }
+@media all and (max-width: 1279px){
+    #titre_en_tete{
+        font-size: 78px;
+      }
+}
+@media all and (max-width: 1204px){
+    #titre_en_tete{
+        font-size: 75px;
+      }
+}
+@media all and (max-width: 1155px){
+    #titre_en_tete{
+        font-size: 72px;
+      }
+}
+@media all and (max-width: 1135px){
+    #titre_en_tete{
+        font-size: 65px;
+      }
+}
+@media all and (max-width: 1024px){
+    .navbar-custom li a{
+        font-size:13px;
+      }
+}
+@media all and (max-width:991px){
+
+}
+@media all and (max-width: 354px){
+/* TITRE EN TETE RESPONSIVE */
+#titre_en_tete_responsive{
+    font-size: 35px;
+}
+}
+@media all and (max-width: 334px){
+    /* TITRE EN TETE RESPONSIVE */
+    #titre_en_tete_responsive{
+    font-size: 30px;
+}
+}
+@media all and (max-width: 310px){
+    #titre_en_tete_responsive{
+        display:none;
+}
+}

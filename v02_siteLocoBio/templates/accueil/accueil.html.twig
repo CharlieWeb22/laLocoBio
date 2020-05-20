@@ -1,0 +1,307 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+ <!-- EN TETE -->
+ <header class="container-fluid d-none d-sm-none d-md-none d-lg-block d-xl-block pr-0 mr-0 ml-0">
+    <div class="row">
+        <!-- LOGO -->
+        <div id="logo" class="col-lg-2 mt-2 pl-5">
+            <a href="index_final.html"><img src="assets/images/logo/logo_carotte.png" alt="logo de La Loco Bio"></a>
+        </div>
+
+        <!-- TITRE -->
+        <div class="col-lg-10 mt-1 mr-0">
+            <div id="en_tete" class="row mr-0">
+                <div id="titre_en_tete" class="col-lg-5">
+                    La Loco Bio
+                </div>
+                <div id="sous_titre" class="col-lg-5 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                    Epicerie Biologique Cooperative
+                </div>
+            </div>
+
+
+            <!-- NAVBAR-->
+            <div class="row">
+                <div class="col-lg-10 pl-0 mt-2 mr-0 pr-0">
+
+                    <nav class=" nav navbar-expand-lg navbar-custom">
+                        <!-- LIEN MENU -->
+                        <ul class="navbar-nav" id="cust-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active pl-0 mr-4 active" href="{{ path('accueil') }}">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-4" href="{{ path('cooperative') }}">La Coopérative</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-4" href="{{ path('producteurs') }}">Nos Producteurs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-4" href="{{ path('surcommande') }}">Sur Commande</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Radio Loco
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="{{ path('rdvdumois') }}">Le rendez-vous du mois</a>
+                                      <a class="dropdown-item" href="{{ path('onvaplusloin') }}">On va plus loin</a>
+                                    </div>
+                                  </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIGNE VERTE -->
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div id="green_line" class="col-lg-12"></div>
+            </div>
+        </div>
+
+</header>
+
+<!-- HEADER RESPONSIVE AVEC TOGGLER -->
+<header class="mr-0 ml-0">
+    <div id="responsive_header" class="container-fluid d-block d-sm-block d-md-block d-lg-none d-xl-none px-2">
+        <nav class="navbar navbar-custom px-0 mr-0">
+            <a id="titre_en_tete_responsive" class="navbar-brand d-flex align-items-center" href="#">
+                <img class="mr-3 ml-2" src="asstes/images/logo/logo_carotte.png" width="50" height="50" alt="logo_carotte">
+                La Loco Bio
+            </a>
+            <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+            <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="btn-toggler-icon"></span>
+                <span class="btn-toggler-icon"></span>
+                <span class="btn-toggler-icon"></span>
+            </button>
+
+            <!-- LIEN RESPONSIVE-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav" id="cust-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active pl-0" href="index_final.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cooperative.html">La Coopérative</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="producteurs.html">Nos Producteurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalogue.html">Sur Commande</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Radio Loco
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="rendez_vous.html">Le rendez-vous du mois</a>
+                            <a class="dropdown-item" href="onvaplusloin.html">On va plus loin</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+        </nav>
+    </div>
+</header>
+<!-- FIN DE L'EN-TETE -->
+
+
+<!-- SLIDE BANNER FORMAT ORDINATEUR ET TABLETTE -->
+<div class="carousel slide d-none d-sm-block" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="assets/images/banner/beetroot-687251_1920.jpg" class="d-block w-100" alt="banner image 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Une coopérative éthique</h5>
+                <p>Favoriser une agriculture locale, éthique et respectueuse de l’environnement, <br>dans un
+                    commerce de proximité, telle est notre ambition</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/images/banner/vegetables-1679947_1920.jpg" class="d-block w-100" alt="banner image 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Des produits locaux</h5>
+                <p>Ce sont les producteurs régionaux, que nous connaissons et qui ont notre confiance</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/images/banner/lilac-5061139_1920.jpg" class="d-block w-100" alt="banner image 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Une épicerie bio</h5>
+                <p>Un commerce différent</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BANNER POUR FORMAT PORTABLE -->
+<div id="responsive_banner" class="container d-block d-sm-none mt-2 mb-0">
+    <div class="jumbotron bg-light m-0 pb-2 mt-0">
+        <hr class="separator_welcome_message">
+        <h1 class="text-center display-4 font-italic">Nous sommes une épicerie et une coopérative éthique valorisant
+            nos producteurs locaux et les produits biologiques.</h1>
+        <hr class="separator_welcome_message">
+    </div>
+</div>
+<!-- FIN BANNER POUR FORMAT PORTABLE -->
+<!-- FIN SLIDE BANNER-->
+
+
+<!-- COOP/PRODUC/CATALOGUE -->
+<div class="container my-2">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 my-3">
+            <div class="card animate__animated animate__zoomIn"
+                style="background-color: #6CA5BF; border: none; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);">
+                <div class="card-body" style="height:auto;">
+                    <h5 class="card-title"
+                        style="text-transform: uppercase; font-size: 30px; font-family: 'impact'; letter-spacing: 2px; color: white;">
+                        La Cooperative</h5>
+                    <p class="card-text" style="height: 130px;">Une <strong>coopérative</strong> est la combinaison
+                        d'un regroupement de personnes et d'une entreprise fondée sur la participation économique
+                        des membres, en capital et en opérations.</p>
+                    <a href="#" class="btn btn-light float-right" style="color: #6CA5BF; border-radius: 0.5em;">Qui
+                        sommes-nous ?<i class="fas fa-chevron-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 my-3">
+            <div class="card animate__animated animate__zoomIn animate__delay-1s"
+                style="background-color: #F29900; border: none; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);">
+                <div class="card-body">
+                    <h5 class="card-title"
+                        style="text-transform: uppercase; font-size: 30px; font-family: 'impact'; letter-spacing: 2px; color: white;">
+                        Nos Producteurs</h5>
+                    <p class="card-text" style="height: 130px;">En <strong>agriculture</strong>, un producteur ou
+                        paysan-producteur ou encore agriculteur-producteur est une personne qui gère une ferme pour
+                        commercialiser sa production agricole.</p>
+                    <a href="#" class="btn btn-light float-right" style="color: #F29900; border-radius: 0.5em;">Qui
+                        sont-ils?<i class="fas fa-chevron-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 my-3">
+            <div class="card animate__animated animate__zoomIn animate__delay-2s"
+                style="background-color: #B2332A; border: none; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);">
+                <div class="card-body">
+                    <h5 class="card-title"
+                        style="text-transform: uppercase; font-size: 30px; font-family: 'impact'; letter-spacing: 2px; color: white;">
+                        Sur Commande</h5>
+                    <p class="card-text" style="height: 130px;">En faisant vos courses <em>en vrac</em>, vous
+                        économiserez en évitant d’acheter des produits que vous avez déjà dans vos placards mais
+                        vous bénéficierez aussi prix plus intéressants.</p>
+                    <a href="#" class="btn btn-light float-right"
+                        style="color: #B2332A; border-radius: 0.5em;">Consommer autrement<i
+                            class="fas fa-chevron-right ml-2"></i></a>
+                </div>
+                <!-- ancienne couleur rouge : #BE6546 -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIN COOP/PRODUC/CATALOGUE -->
+
+<!-- SECTION LE RENDEZ-VOUS DU MOIS  -->
+<div class="container-fluid p-2" style="background-color:#f8f9fa;">
+    <div class="container pt-lg-3 mb-2">
+        <div class="row mb-5">
+            <div class="col-lg-4">
+                <img src="assets/images/rendez_vous_du_mois/1.png"
+                    style="height:auto; width:auto; box-shadow: 0 .5rem 1rem rgba(102, 47, 47, 0.15);"
+                    alt="about image" class="img-fluid" />
+            </div>
+            <div class="col-lg-8 my-lg-0 my-5">
+                <h3
+                    style="text-transform: uppercase; font-size: 30px; font-family: 'impact'; letter-spacing: 2px; color: #609EA5;">
+                    Le rendez-vous du mois</h3>
+                <hr>
+                <p>Chaque mois, découvrez l'article sur le profil d'un producteur, d'une recette de cuisine ou d'un
+                    sujet qui nous tiens à coeur</p>
+                <p style="max-height: 300px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                    convallis libero mattis ipsum rutrum, nec sollicitudin leo viverra. Orci varius natoque
+                    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi eu elementum nulla, ac
+                    blandit nisi. Ut semper laoreet enim nec euismod. Aliquam ultricies feugiat rhoncus. Morbi eu
+                    elementum nulla, ac blandit nisi. Ut semper laoreet enim nec euismod. Aliquam ultricies feugiat
+                    rhoncus. Morbi eu elementum nulla, ac blandit nisi. Ut semper laoreet enim nec euismod. Aliquam
+                    ultricies feugiat rhoncus. Morbi eu elementum nulla, ac blandit nisi. Ut semper laoreet enim nec
+                    euismod. Aliquam ultricies feugiat rhoncus.</p>
+
+                <a href="#" class="btn btn-light float-right mr-3"
+                    style="background-color:#609EA5; color: white; border-radius: 0.5em;">Lire la suite<i
+                        class="fas fa-chevron-right ml-2"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FIN SECTION LE RENDEZ-VOUS DU MOIS -->
+
+
+
+<!-- SECTION ON VA PLUS LOIN -->
+<div class="container my-5 mb-2">
+    <div class="row mb-5">
+
+        <div class="col-lg-8 my-lg-0 my-5">
+            <h3
+                style="text-transform: uppercase; font-size: 30px; font-family: 'impact'; letter-spacing: 2px; color: #78C6CF;">
+                On va plus loin</h3>
+            <hr>
+            <p>Nos actions vont plus loin, nous investissons dans notre commune et dans des projet en lien avec
+                notre philosophie</p>
+            <p style="max-height: 200px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                convallis libero mattis ipsum rutrum, nec sollicitudin leo viverra.</p>
+
+            <a href="#" class="btn btn-light float-right mr-3"
+                style="background-color:#78C6CF; color: white; border-radius: 0.5em;">En savoir plus<i
+                    class="fas fa-chevron-right ml-2"></i></a>
+        </div>
+        <div class="col-lg-4">
+            <img src="assets/images/plus_loin/flowers-5128200_1920.jpg"
+                style="height:auto; width:auto; box-shadow: 0 .5rem 1rem rgba(102, 47, 47, 0.15);" alt="about image"
+                class="img-fluid" />
+        </div>
+    </div>
+</div>
+<!-- FIN SECTION ON VA PLUS LOIN -->
+
+
+<!-- LES HORAIRES DU MAGASIN -->
+<div class="container-fluid pb-0" style="background-color:#f8f9fa;">
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-lg-12">
+                <h2 class="text-center mt-3 mb-2">Horaires d'ouvertures</h2>
+                <hr class="separator_yellow">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-lg-12 d-flex flex-column d-flex align-items-center mt-2">
+                <a><i class="far fa-clock fa-4x" style="color:#FFCE0A;"></i></a>
+                <p class="mt-3 text-center">
+                    Lundi, Mercredi, Jeudi, Vendredi & Samedi<br>
+                    De 9h à 12h30 et de 15h à 19h<br>
+                    <strong>Fermé le Mardi et le Dimanche</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END LES HORAIRES DU MAGASIN -->
+{% endblock %}
