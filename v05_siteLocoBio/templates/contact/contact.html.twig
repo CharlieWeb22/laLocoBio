@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<header class="container-fluid d-none d-sm-none d-md-none d-lg-block d-xl-block">
+    <div class="row">
+        <!-- LOGO -->
+        <div id="logo" class="col-lg-2 mt-2 pl-5">
+            <a href="index_final.html"><img src="assets/images/logo/logo_carotte.png" alt="logo de La Loco Bio"></a>
+        </div>
+
+        <!-- TITRE -->
+        <div class="col-lg-10 mt-1">
+            <div id="en_tete" class="row">
+                <div id="titre_en_tete" class="col-lg-5">
+                    La Loco Bio
+                </div>
+                <div id="sous_titre" class="col-lg-5 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                    Epicerie Biologique Cooperative
+                </div>
+            </div>
+
+
+            <!-- NAVBAR-->
+            <div class="row">
+                <div class="col-lg-10 pl-0 mt-2">
+
+                    <nav class=" nav navbar-expand-lg navbar-custom">
+                        <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                        <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                            type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav" id="cust-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active pl-0 mr-4 active" href="{{ path('accueil') }}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('cooperative') }}">La Coopérative</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('producteurs') }}">Nos Producteurs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('surcommande') }}">Sur Commande</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Radio Loco
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <a class="dropdown-item" href="{{ path('rdvdumois') }}">Le rendez-vous du mois</a>
+                                          <a class="dropdown-item" href="{{ path('onvaplusloin') }}">On va plus loin</a>
+                                        </div>
+                                      </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                                </li>
+                                {% if is_granted('ROLE_REDAC') %}
+                            <li class="nav-item">
+                                <a class="nav-link ml-4 btn btn-danger" href="{{ path('easyadmin') }}" style="color:white;">Administration</a>
+                            </li>
+                            {% endif %}
+                            </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ligne Verte -->
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div id="yellow_line" class="col-lg-12"></div>
+        </div>
+    </div>
+</header>
+<!-- HEADER RESPONSIVE AVEC TOGGLER -->
+<header>
+    <div id="responsive_header_yellow" class="container-fluid d-block d-sm-block d-md-block d-lg-none d-xl-none px-2">
+            <nav class="navbar navbar-custom px-0">
+                    <a id="titre_en_tete_responsive" class="navbar-brand d-flex align-items-center" href="#">
+                      <img class="mr-3" src="images/logo/logo_carotte.png" width="50" height="50" alt="logo_carotte">
+                        La Loco Bio
+                    </a>
+                      <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                      <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                      type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent" aria-expanded="false"
+                      aria-label="Toggle navigation">
+                      <span class="btn-toggler-icon-yellow"></span>
+                      <span class="btn-toggler-icon-yellow"></span>
+                      <span class="btn-toggler-icon-yellow"></span>
+                  </button>
+
+                  <!-- Links -->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav" id="cust-nav">
+                          <li class="nav-item">
+                              <a class="nav-link pl-0 mr-4" href="index_final.html">Accueil</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link active mr-4" href="cooperative.html">La Coopérative</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link mr-4" href="producteurs.html">Nos Producteurs</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link mr-4" href="catalogue.html">Sur Commande</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Radio Loco
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Le rendez-vous du mois</a>
+                                    <a class="dropdown-item" href="#">On va plus loin</a>
+                                  </div>
+                                </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Contact</a>
+                          </li>
+                      </ul>
+                  </nav>
+    </div>
+</header>
+<!-- FIL D'ARIANE -->
+<div class="container-fluid">
+        <div class="row" id="fil_ariane" style="background-color: #FFDD57">
+                <a href="index_final.html" class="btn btn-default"><i class="fa fa-home"></i></a>
+                <a href="#" class="btn btn-default"><i class="fas fa-caret-right"></i></a>
+                <a href="cooperative.html" class="btn btn-default"><div>Contact</div></a>
+        </div>
+    </div>
+<!-- END FIL D'ARIANE -->
+<!-- contenu de la page -->
+<div class="container-fluid" style="background-color:white;">
+<div class="container">
+ <div class="row">
+     <div class="col-lg-12">
+         <h2 class="text-center mt-3">Contacter-nous ! .. </h2>
+         <hr class="separator_yellow">
+     </div>
+ </div>
+</div>
+<div class="container">
+ <div class="row my-3">
+     <div class="col-lg-4 d-flex flex-column d-flex align-items-center py-5 pt-5">
+            <a><i class="fas fa-map-marker-alt fa-4x" style="color:#FFCE0A;"></i></a>
+            <p class="mt-2">8 Avenue de la gare<br>
+                16210 Chalais
+            </p>
+     </div>
+     <div class="col-lg-4 d-flex flex-column d-flex align-items-center py-5">
+            <a><i class="fas fa-phone-alt fa-4x" style="color:#FFCE0A;"></i></a>
+            <p class="mt-3">05 45 78 67 44</p>
+     </div>
+     <div class="col-lg-4 d-flex flex-column d-flex align-items-center py-5">
+            <a><i class="fas fa-envelope fa-4x" style="color:#FFCE0A;"></i></a>
+            <p class="mt-3">lalocobio@gmail.com</p>
+     </div>
+ </div>
+</div>
+</div>
+<div class="container-fluid" style="background-color:#E6E7E8;">
+<div class="container">
+    <div class="row my-3">
+        <div class="col-lg-12">
+            <h2 class="text-center mt-3">.. Ou passer nous voir à la boutique</h2>
+            <hr class="separator_yellow">
+        </div>
+    </div>
+</div>
+<div class="container">
+ <div class="row my-3">
+        <div class="col-lg-12 d-flex flex-column d-flex align-items-center mt-2 mb-3">
+                <a><i class="far fa-clock fa-4x" style="color:#FFCE0A;"></i></a>
+                <p class="mt-4">HORAIRES D’OUVERTURE :<br>
+                        Lundi, Mercredi, Jeudi, Vendredi & Samedi<br>
+                        De 9h à 12h30 et de 15h à 19h<br>
+                        <strong>Fermé le Mardi et le Dimanche</strong></p>
+         </div>
+ </div>
+</div>
+</div>
+<div class="container-fluid">
+ <div class="row my-5">
+     <div class="col-lg-6 d-flex justify-content-center mt-2">
+         <img src="assets/images/magasin/boutique.jpeg" style="overflow: hidden;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center center;
+         max-height:350px;">
+     </div>
+     <div class="col-lg-6 d-flex justify-content-center mt-2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.7580245349277!2d0.03819781555105937!3d45.27290197909919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ffe0f70f3ec6b7%3A0x16d992d74bc29396!2sLa%20Loco%20Bio!5e0!3m2!1sfr!2sfr!4v1589035420469!5m2!1sfr!2sfr" 
+            width="550" height="350" 
+            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+     </div>
+ </div>
+</div>
+
+<!-- fin contenu de la page -->
+{% endblock %}
