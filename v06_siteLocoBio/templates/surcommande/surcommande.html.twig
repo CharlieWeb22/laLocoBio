@@ -1,0 +1,277 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sur Commande{% endblock %}
+
+{% block body %}
+<header class="container-fluid d-none d-sm-none d-md-none d-lg-block d-xl-block">
+    <div class="row">
+        <!-- LOGO -->
+        <div id="logo" class="col-lg-2 mt-2 pl-5">
+            <a href="index_essai2.php"><img src="assets/images/logo/logo_carotte.png" alt="logo de La Loco Bio"></a>
+        </div>
+
+        <!-- TITRE -->
+        <div class="col-lg-10 mt-1">
+            <div id="en_tete" class="row">
+                <div id="titre_en_tete" class="col-lg-5">
+                    La Loco Bio
+                </div>
+                <div id="sous_titre" class="col-lg-5 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                    Epicerie Biologique Cooperative
+                </div>
+            </div>
+
+
+            <!-- NAVBAR-->
+            <div class="row">
+                <div class="col-lg-10 pl-0 mt-2">
+
+                    <nav class=" nav navbar-expand-lg navbar-custom">
+                        <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                        <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                            type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav" id="cust-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active pl-0 mr-4" href="{{ path('accueil') }}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('cooperative') }}">La Coopérative</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('producteurs') }}">Nos Producteurs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('surcommande') }}">Sur Commande</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Radio Loco
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <a class="dropdown-item" href="{{ path('rdvdumois') }}">Le rendez-vous du mois</a>
+                                          <a class="dropdown-item" href="{{ path('onvaplusloin') }}">On va plus loin</a>
+                                        </div>
+                                      </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                                </li>
+                                {% if is_granted('ROLE_REDAC') %}
+                                <li class="nav-item">
+                                    <a class="nav-link ml-4 btn btn-danger" href="{{ path('easyadmin') }}" style="color:white;">Administration</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ligne Verte -->
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div id="red_line" class="col-lg-12"></div>
+        </div>
+    </div>
+</header>
+<!-- HEADER RESPONSIVE AVEC TOGGLER -->
+<header>
+    <div id="responsive_header_red" class="container-fluid d-block d-sm-block d-md-block d-lg-none d-xl-none px-2">
+            <nav class="navbar navbar-custom px-0">
+                    <a id="titre_en_tete_responsive" class="navbar-brand d-flex align-items-center" href="#">
+                      <img class="mr-3" src="assets/images/logo/logo_carotte.png" width="50" height="50" alt="logo_carotte">
+                        La Loco Bio
+                    </a>
+                      <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                      <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                      type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent" aria-expanded="false"
+                      aria-label="Toggle navigation">
+                      <span class="btn-toggler-icon-red"></span>
+                      <span class="btn-toggler-icon-red"></span>
+                      <span class="btn-toggler-icon-red"></span>
+                  </button>
+
+                  <!-- Links -->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav" id="cust-nav">
+                          <li class="nav-item">
+                              <a class="nav-link pl-0 mr-4" href="index_final.html">Accueil</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link active mr-4" href="cooperative.html">La Coopérative</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link mr-4" href="producteurs.html">Nos Producteurs</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link mr-4" href="catalogue.html">Sur Commande</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Radio Loco
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="rendez_vous.html">Le rendez-vous du mois</a>
+                                    <a class="dropdown-item" href="onvaplusloin.html">On va plus loin</a>
+                                  </div>
+                                </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="contact.html">Contact</a>
+                          </li>
+                      </ul>
+                  </nav>
+    </div>
+</header>
+    <!-- FIL D'ARIANE -->
+    <div class="container-fluid">
+        <div class="row" id="fil_ariane" style="background-color: #CC3025;">
+                <a href="index_final.html" class="btn btn-default"><i class="fa fa-home"></i></a>
+                <a href="#" class="btn btn-default"><i class="fas fa-caret-right"></i></a>
+                <a href="cooperative.html" class="btn btn-default"><div>Sur Commande</div></a>
+        </div>
+    </div>
+    <!-- END FIL D'ARIANE -->
+
+
+<!-- CONTENU PAGE -->
+<div class="container-fluid">
+<div class="row">
+<div class="jumbotron col-lg-12 bg-light">
+    <h1 class="text-center display-4 font-italic">Les produits disponible sur Commande</h1>
+    <hr class="separator_red">
+    <p>Lorsque vous passez une commande de gros contenant, vous abtenez une réduction de 10%, choisissez vos produits et appellez-nous pour passer commande au 05.45.78.67.44</p>
+</div>
+</div>
+</div>
+<!--
+<div class="row mb-5 mt-1" style="background-color: #BF364F; border-radius:.25em;">
+<div class="col-lg-12">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a style="color:black;" class="flex-sm-fill text-sm-center nav-link" href="#">Epicerie Salée</a>
+        <a style="color:black;" class="flex-sm-fill text-sm-center nav-link" href="#">Epicerie Sucrée</a>
+        <a style="color:white;" class="flex-sm-fill text-sm-center nav-link" href="#">Vrac</a>
+        <a style="color:white;" class="flex-sm-fill text-sm-center nav-link" href="#">Produit hygiénique</a>
+      </nav>
+</div>
+</div>
+-->
+<div class="container">
+    <div class="row">
+
+      <div class="col-lg-3">
+        <div class="list-group">
+          <a href="#" class="list-group-item" style="color:black; font-family:'impact'; letter-spacing:2px; text-transform: uppercase; background-color: #CC3025;"><i class="fas fa-stream"></i> Categories</a>
+          <a href="#" class="list-group-item" style="color:black; font-family:'impact'; letter-spacing:2px;">Vrac</a>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="catalogue_article.html"><img style="height:175px;" class="card-img-top" src="images/catalogue/rice-2061877_1920.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a style="color:green;" href="catalogue_article.html">Riz Blanc</a>
+                </h4>
+                <h5>5,50€</h5>
+                <p class="text-muted"><small>disponible en 3kg,5kg et 10kg</small></p>
+                <p>Origine : FRANCE</p>
+                <p>Référence : XPR045JKP</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img style="height:175px;" class="card-img-top" src="images/catalogue/oatmeal-761434_1920.jpg" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a style="color:green;" href="#">Flocon d'avoine</a>
+                </h4>
+                <h5>6,5€</h5>
+                <p class="text-muted"><small>disponible en 5kg et 10kg</small></p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Three</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Four</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Five</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">Item Six</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+</div>
+<!-- CONTENU PAGE --> 
+{% endblock %}
