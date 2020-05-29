@@ -1,0 +1,19 @@
+easy_admin:
+    design:
+        brand_color: '#49A0B5'
+        menu:
+            - { label: 'Horaires du magasin'}
+            - { entity: 'Horaires', label: 'Heures Ouvertures', icon: 'clock'}
+            - { label: 'Nos Producteurs' }
+            - { entity: 'Producteur', label: 'Près de chez vous', icon: 'seedling'}
+            - { entity: 'ProducteurRegion', label: 'Dans la région', icon: 'seedling'}
+            - { entity: 'ProducteurDirect', label: 'Direct', icon: 'seedling'}
+            - { label: 'Sur Commande' }
+            - { entity: 'Produit', label: 'Produit du catalogue', icon: 'apple-alt'}
+            - { label: 'Radio Loco'}
+            - { entity: 'ArticleRdvdumois', label: 'Le rendez-vous du mois', icon: 'newspaper'}
+            - { entity: 'ArticleOnvaplusloin', label: 'On va plus loin', icon: 'newspaper'}
+            - { label: 'Utilisateur' }
+            - { entity: 'User', icon: 'user', permission: 'ROLE_ADMIN' }
+
+

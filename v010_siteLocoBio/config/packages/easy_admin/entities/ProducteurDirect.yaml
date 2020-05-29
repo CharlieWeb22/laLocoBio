@@ -1,0 +1,20 @@
+easy_admin:
+    entities:
+        ProducteurDirect:
+            class: App\Entity\ProducteurDirect
+            list:
+                fields:
+                    - nom
+                    - prenom
+                    - activite
+                    - {property: 'image_ProducteurDirect', label: 'Photo', type: 'image', base_path: '%app.path.image_ProducteurDirect%' }
+                    - adresse
+            form:
+                fields:
+                    - nom
+                    - prenom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - createdAt
