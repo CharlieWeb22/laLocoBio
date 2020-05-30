@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+        Produit:
+            class: App\Entity\Produit
+            list:
+                title: 'Mes produits en magasin'
+                fields:
+                    - nom
+                    - poids
+                    - prix
+                    - reference
+                    - {property: 'image_produit', label: 'Photo', type: 'image', base_path: '%app.path.image_produit%' }
+                actions:
+                    - { name: 'show', icon: 'search', label: 'voir' }
+                    - { name: 'edit',, icon: 'eye', label: 'modifier' }
+                    - { name: 'delete', icon: 'trash', label: false, title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter un produit', icon: 'plus', title: 'Ajouter' }
+
+            form:
+                fields:
+                    - nom
+                    - origine
+                    - reference
+                    - description
+                    - { property: 'poids', help: 'indiquez le poids comme ceci : 3kg, 5kg et 10kg' }
+                    - { property: 'prix', help: 'indiquez le prix comme ceci : 5,5€' }
+                    - {property: 'imageFile', label: 'Photo', type: 'vich_image', base_path: '%app.path.image_produit%' }

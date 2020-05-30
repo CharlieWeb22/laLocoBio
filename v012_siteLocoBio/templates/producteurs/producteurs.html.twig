@@ -1,0 +1,278 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Producteurs{% endblock %}
+
+{% block body %}
+<header class="container-fluid d-none d-sm-none d-md-none d-lg-block d-xl-block">
+    <div class="row">
+        <!-- LOGO -->
+        <div id="logo" class="col-lg-2 mt-2 pl-5">
+            <a href="index_final.html"><img src="assets/images/logo/logo_carotte.png" alt="logo de La Loco Bio"></a>
+        </div>
+
+        <!-- TITRE -->
+        <div class="col-lg-10 mt-1">
+            <div id="en_tete" class="row">
+                <div id="titre_en_tete" class="col-lg-5">
+                    La Loco Bio
+                </div>
+                <div id="sous_titre" class="col-lg-5 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                    Epicerie Biologique Cooperative
+                </div>
+            </div>
+
+
+            <!-- NAVBAR-->
+            <div class="row">
+                <div class="col-lg-10 pl-0 mt-2">
+
+                    <nav class=" nav navbar-expand-lg navbar-custom">
+                        <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                        <button
+                            class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                            type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav" id="cust-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active pl-0 mr-4 active" href="{{ path('accueil') }}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('cooperative') }}">La Coopérative</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('producteurs') }}">Nos Producteurs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('surcommande') }}">Sur Commande</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Radio Loco
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ path('rdvdumois_article') }}">Le rendez-vous du mois</a>
+                                            <a class="dropdown-item" href="{{ path('onvaplusloin_article') }}">On va plus loin</a>
+                                        </div>
+                                      </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                                </li>
+                                {% if is_granted('ROLE_REDAC') %}
+                                <li class="nav-item">
+                                    <a class="nav-link ml-4 btn btn-danger" href="{{ path('easyadmin') }}" style="color:white;">Administration</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ligne Verte -->
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div id="orange_line" class="col-lg-12"></div>
+        </div>
+    </div>
+</header>
+<!-- HEADER RESPONSIVE AVEC TOGGLER -->
+<header>
+    <div id="responsive_header_producteurs"
+        class="container-fluid d-block d-sm-block d-md-block d-lg-none d-xl-none px-2">
+        <nav class="navbar navbar-custom px-0">
+            <a id="titre_en_tete_responsive" class="navbar-brand d-flex align-items-center" href="#">
+                <img class="mr-3" src="images/logo/logo_carotte.png" width="50" height="50" alt="logo_carotte">
+                La Loco Bio
+            </a>
+            <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+            <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="btn-toggler-icon-orange"></span>
+                <span class="btn-toggler-icon-orange"></span>
+                <span class="btn-toggler-icon-orange"></span>
+            </button>
+
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav" id="cust-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active pl-0 mr-4" href="index_final.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4" href="cooperative.html">La Coopérative</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4" href="producteurs.html">Nos Producteurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4" href="catalogue.html">Sur Commande</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Radio Loco
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="rendez_vous.html">Le rendez-vous du mois</a>
+                            <a class="dropdown-item" href="onvaplusloin.html">On va plus loin</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+        </nav>
+    </div>
+</header>
+<!-- FIL D'ARIANE -->
+
+<div class="container-fluid">
+    <div class="row" id="fil_ariane" style="background-color: #FFB629;">
+        <a href="{{ path('accueil') }}" class="btn btn-default"><i class="fa fa-home"></i></a>
+        <a href="#" class="btn btn-default"><i class="fas fa-caret-right"></i></a>
+        <a href="{{ path('producteurs') }}" class="btn btn-default">
+            <div>Nos Producteurs</div>
+        </a>
+    </div>
+</div>
+<!-- END FIL D'ARIANE -->
+
+<!-- CONTENU DE LA PAGE -->
+<div class="jumbotron p-4 p-md-5 text-dark rounded bg-light mb-0 animate__animated animate__fadeIn">
+    <div class="col-md-12 px-0">
+        <h1 class="display-4 font-italic">Nos producteurs</h1>
+        <p class="lead my-3">Nous avons choisit nos partenaires, nos producteurs pour qu'ils soient en harmonie avec
+            nos valeurs, ci-dessous vous pourrez trouvez les producteurs que nous valorisons et que nous sommes fier
+            de vous presenter.</p>
+    </div>
+</div>
+
+<!-- Ligne de séparation près de chez vous -->
+<div class="row m-0">
+    <div class="col-lg-12 d-flex justify-content-center" style="background-color: #FFB629; color:white;">
+        <p class="my-1"
+            style="font-size:25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            Nos producteurs près de chez vous</p>
+    </div>
+</div>
+<!-- End Ligne de séparation près de chez vous -->
+
+
+<!-- PRODUCTEUR PRES DE CHEZ VOUS -->
+<div class="container">
+    <div class="row mt-3 mb-4">
+            {% for producteur in producteurs %}
+            <div class="col-lg-4 col-md-6 mt-3">
+                <!--Card Header-->
+                <div class="card text-center"  style="border:none; box-shadow: 0 .5rem 1rem rgba(102, 47, 47, 0.15); height:450px;">
+                    <p class="card-header"
+                    style="font-family: 'Impact'; letter-spacing: 1px; font-size: 1.5em; color:white; background-color: #F29900;">
+                    {{ producteur.nom }}</p>
+                    <!--Card IMAGE-->
+                    <img src="{{ asset('assets/uploads/images/producteur/') }}{{ producteur.ImageProducteur }}" alt="" class="card-img-top" alt="image"
+                    style="width:100; height:250px; object-fit:cover;">
+                    <!-- CARD BODY -->
+                    <div class="card-body">
+                        <h5 class="card-title text-left" style="color:black;"><em>{{ producteur.activite }}</em></h5>
+                        
+                    </div>
+                    <div class="card-text" style="background-color: #F29900; color:white;">
+                        <p style="margin:4px; border-radius: .25em;">Adresse : {{ producteur.adresse }}<br>
+                            </p>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %} 
+    </div>
+</div>
+    
+<!-- end parti près de chez vous -->
+<!-- Ligne de séparation près de chez vous -->
+<div class="row m-0">
+    <div class="col-lg-12 d-flex justify-content-center" style="background-color: #FFB629; color:white;">
+        <p class="my-1"
+            style="font-size:25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            Dans la région</p>
+    </div>
+</div>
+<!-- End Ligne de séparation près de chez vous -->
+<!-- PRODUCTEUR Dans la région -->
+<div class="container">
+    <div class="row mt-3 mb-4">
+            {% for producteurRegion in producteurRegion %}
+            <div class="col-lg-4 col-md-6 mt-3">
+                <!--Card Header-->
+                <div class="card text-center"  style="border:none; box-shadow: 0 .5rem 1rem rgba(102, 47, 47, 0.15); height:450px;">
+                    <p class="card-header"
+                    style="font-family: 'Impact'; letter-spacing: 1px; font-size: 1.5em; color:white; background-color: #F29900;">
+                    {{ producteurRegion.nom }}
+                </p>
+                    <!--Card IMAGE-->
+                    <img src="{{ asset('assets/uploads/images/producteurRegion/') }}{{ producteurRegion.ImageProducteurRegion }}" alt="" class="card-img-top" alt="image"
+                    style="width:100; height:250px; object-fit:cover;">
+                    <!-- CARD BODY -->
+                    <div class="card-body">
+                        <h5 class="card-title text-left" style="color:black;"><em>{{ producteurRegion.activite }}</em></h5>
+                        
+                    </div>
+                    <div class="card-text" style="background-color: #F29900; color:white;">
+                        <p style="margin:4px; border-radius: .25em;">Adresse : {{ producteurRegion.adresse }}<br>
+                            </p>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %} 
+    </div>
+</div>
+    
+<!-- end parti dans la région -->
+<!-- Ligne de séparation producteur direct -->
+<div class="row m-0">
+    <div class="col-lg-12 d-flex justify-content-center" style="background-color: #FFB629; color:white;">
+        <p class="my-1"
+            style="font-size:25px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            Producteur direct</p>
+    </div>
+</div>
+<!-- End Ligne de séparation producteurs direct-->
+<!-- Parti producteurs direct-->
+<div class="container">
+    <div class="row mt-3 mb-4">
+            {% for producteurDirect in producteurDirect %}
+            <div class="col-lg-4 col-md-6 mt-3">
+                <!--Card Header-->
+                <div class="card text-center"  style="border:none; box-shadow: 0 .5rem 1rem rgba(102, 47, 47, 0.15); height:450px;">
+                    <p class="card-header"
+                    style="font-family: 'Impact'; letter-spacing: 1px; font-size: 1.5em; color:white; background-color: #F29900;">
+                    {{ producteurDirect.nom }}
+                </p>
+                    <!--Card IMAGE-->
+                    <img src="{{ asset('assets/uploads/images/producteurDirect/') }}{{ producteurDirect.ImageProducteurDirect }}" alt="" class="card-img-top" alt="image"
+                    style="width:100; height:250px; object-fit:cover;">
+                    <!-- CARD BODY -->
+                    <div class="card-body">
+                        <h5 class="card-title text-left" style="color:black;"><em>{{ producteurDirect.activite }}</em></h5>
+                        
+                    </div>
+                    <div class="card-text" style="background-color: #F29900; color:white;">
+                        <p style="margin:4px; border-radius: .25em;">Adresse : {{ producteurDirect.adresse }}<br>
+                            </p>
+                    </div>
+                </div>
+            </div> 
+            {% endfor %} 
+    </div>
+</div>
+<!-- end parti producteur direct -->
+
+<!-- FIN DONTENU DE LA PAGE -->
+{% endblock %}
