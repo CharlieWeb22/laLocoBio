@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rdv du mois{% endblock %}
+
+{% block body %}
+<header class="container-fluid d-none d-sm-none d-md-none d-lg-block d-xl-block">
+    <div class="row">
+        <!-- LOGO -->
+        <div id="logo" class="col-lg-2 mt-2 pl-5">
+            <a href="index_final.html"><img src="assets/images/logo/logo_carotte.png" alt="logo de La Loco Bio"></a>
+        </div>
+
+        <!-- TITRE -->
+        <div class="col-lg-10 mt-1">
+            <div id="en_tete" class="row">
+                <div id="titre_en_tete" class="col-lg-5">
+                    La Loco Bio
+                </div>
+                <div id="sous_titre" class="col-lg-5 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                    Epicerie Biologique Cooperative
+                </div>
+            </div>
+
+
+            <!-- NAVBAR-->
+            <div class="row">
+                <div class="col-lg-10 pl-0 mt-2">
+
+                    <nav class=" nav navbar-expand-lg navbar-custom">
+                        <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                        <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                            type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                            <span class="btn-toggler-icon"></span>
+                        </button>
+
+                        <!-- Links -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav" id="cust-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active pl-0 mr-4 active" href="{{ path('accueil') }}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('cooperative') }}">La Coopérative</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('producteurs') }}">Nos Producteurs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link mr-4" href="{{ path('surcommande') }}">Sur Commande</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          Radio Loco
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ path('rdvdumois_article') }}">Le rendez-vous du mois</a>
+                                            <a class="dropdown-item" href="{{ path('onvaplusloin_article') }}">On va plus loin</a>
+                                        </div>
+                                      </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                                </li>
+                                {% if is_granted('ROLE_REDAC') %}
+                                <li class="nav-item">
+                                    <a class="nav-link ml-4 btn btn-danger" href="{{ path('easyadmin') }}" style="color:white;">Administration</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ligne Verte -->
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div id="light_blue_line" class="col-lg-12"></div>
+        </div>
+    </div>
+</header>
+<!-- HEADER RESPONSIVE AVEC TOGGLER -->
+<header>
+    <div id="responsive_header_light_blue" class="container-fluid d-block d-sm-block d-md-block d-lg-none d-xl-none px-2">
+            <nav class="navbar navbar-custom px-0">
+                    <a id="titre_en_tete_responsive" class="navbar-brand d-flex align-items-center" href="#">
+                      <img class="mr-3" src="images/logo/logo_carotte.png" width="50" height="50" alt="logo_carotte">
+                        La Loco Bio
+                    </a>
+                      <!-- TOGGGLER/COLLAPSIBLE BUTTON -->
+                      <button class="navbar-toggler navbar-light d-block d-sm-block d-md-block d-lg-none d-xl-none"
+                      type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                      aria-controls="navbarSupportedContent" aria-expanded="false"
+                      aria-label="Toggle navigation">
+                      <span class="btn-toggler-icon-light-blue"></span>
+                      <span class="btn-toggler-icon-light-blue"></span>
+                      <span class="btn-toggler-icon-light-blue"></span>
+                  </button>
+
+                  <!-- Links -->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav" id="cust-nav">
+                          <li class="nav-item">
+                              <a class="nav-link pl-0 mr-4" href="index_final.html">Accueil</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link active mr-4" href="cooperative.html">La Coopérative</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link mr-4" href="producteurs.html">Nos Producteurs</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link mr-4" href="catalogue.html">Sur Commande</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle mr-4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Radio Loco
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="rendez_vous.html">Le rendez-vous du mois</a>
+                                    <a class="dropdown-item" href="onvaplusloin.html">On va plus loin</a>
+                                  </div>
+                                </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="contact.html">Contact</a>
+                          </li>
+                      </ul>
+                  </nav>
+    </div>
+</header>
+<!-- FIL D'ARIANE -->
+<div class="container-fluid">
+    <div class="row" id="fil_ariane" style="background-color: #78C6CF;">
+            <a href="index_final.html" class="btn btn-default"><i class="fa fa-home"></i></a>
+            <a href="#" class="btn btn-default"><i class="fas fa-caret-right"></i></a>
+            <a href="cooperative.html" class="btn btn-default"><div>Radio Loco</div></a>
+    </div>
+</div>
+<!-- END FIL D'ARIANE -->
+<!-- CHAPEAU DE LA PAGE -->
+<div class="jumbotron p-4 p-md-5 text-dark rounded bg-light">
+    <div class="col-md-12 px-0">
+      <h1 class="display-4 font-italic">Les sujets divers qui nous attirent</h1>
+      <p class="lead my-3">Chapeau de la page</p>
+    </div>
+  </div>
+<!-- END CHAPEAU DE LA PAGE -->
+<!-- CONTENU PAGE -->
+<section>
+    <div class="container">
+      <div class="row">
+        {% for articlerdvdumois in articlerdvdumois %}
+        <div class="col-lg-6 mt-3 mb-3">
+            <div class="card" style="border:none; box-shadow: 0 .5rem 1rem rgba(102, 47, 47, 0.15);">
+                <img src="{{ asset('assets/uploads/images/rdvdumois/') }}{{ articlerdvdumois.ImageRdvdumois }}"class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ articlerdvdumois.titre }}</h5>
+                  <p class="card-text">{{ articlerdvdumois.chapeau }}</p>
+                  <a href="{{ path('rdvdumois_article_show', {'slug': articlerdvdumois.slug}) }}" class="btn btn-light float-right mr-3"
+                      style="background-color:#78C6CF; color: white; border-radius: 0.5em;">Lire<i
+                          class="fas fa-chevron-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %} 
+        </div>
+    </div>
+  </section>
+  <hr class="separator">
+      <!-- FIN CONTENU PAGE -->
+{% endblock %}

@@ -1,0 +1,13 @@
+easy_admin:
+    entities:
+        Horaires:
+            class: App\Entity\Horaires
+            list:
+                fields:
+                    - contenu
+                    - is_published
+
+            form:
+                fields:
+                    - { property: 'contenu', type: 'fos_ckeditor' }
+                    - { property: 'is_published', type: 'checkbox' }

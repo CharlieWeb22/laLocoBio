@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+        Produit:
+            class: App\Entity\Produit
+            list:
+                fields:
+                    - nom
+                    - poids
+                    - prix
+                    - reference
+                    - {property: 'image_produit', label: 'Photo', type: 'image', base_path: '%app.path.image_produit%' }
+
+            form:
+                fields:
+                    - nom
+                    - origine
+                    - reference
+                    - description
+                    - poids
+                    - prix
+                    - {property: 'imageFile', label: 'Photo', type: 'vich_image', base_path: '%app.path.image_produit%' }

@@ -1,0 +1,28 @@
+easy_admin:
+    entities:
+        ArticleRdvdumois:
+            class: App\Entity\ArticleRdvdumois
+            list:
+                fields:
+                    - titre
+                    - auteur
+                    - is_published
+                    - { property: 'image_rdvdumois', label: 'Photo', type: 'image', base_path: '%app.path.image_rdvdumois%' }
+                    - { property: 'createdAt', label: 'Date de création' }
+            form:
+                fields:
+                    - titre
+                    - chapeau
+                    - { property: 'isPublished', type: 'checkbox' }
+                    - auteur
+                    - { property: 'contenu', label: 'Contenu', type: 'fos_ckeditor' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+
+            edit:
+                fields:
+                    - titre
+                    - chapeau
+                    - { property: 'isPublished', type: 'checkbox' }
+                    - auteur
+                    - { property: 'contenu', label: 'Contenu', type: 'fos_ckeditor' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }

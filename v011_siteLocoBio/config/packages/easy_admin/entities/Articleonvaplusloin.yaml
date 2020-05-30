@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        ArticleOnvaplusloin:
+            class: App\Entity\ArticleOnvaplusloin
+            list:
+                fields:
+                    - titre
+                    - auteur
+                    - is_published
+                    - { property: 'image_onvaplusloin', label: 'Photo', type: 'image', base_path: '%app.path.image_onvaplusloin%' }
+                    - createdAt
+            form:
+                fields:
+                    - titre
+                    - chapeau
+                    - auteur
+                    - { property: 'isPublished', type: 'checkbox' }
+                    - { property: 'contenu', label: 'Contenu', type: 'fos_ckeditor' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
