@@ -1,0 +1,30 @@
+easy_admin:
+    entities:
+        ArticleRdvdumois:
+            class: App\Entity\ArticleRdvdumois
+            list:
+                title: 'Les articles du mois'
+                fields:
+                    - { property: 'is_published', label: 'Statut' }
+                    - { property: 'image_rdvdumois', label: 'Photo', type: 'image', base_path: '%app.path.image_rdvdumois%' }
+                    - titre
+                    - auteur
+                    - { property: 'createdAt', label: 'Date de création', css_class: 'text-align-right' }
+            form:
+                title: 'Nouvelle Article'
+                fields:
+                    - titre
+                    - chapeau
+                    - auteur
+                    - { property: 'contenu', label: 'Contenu', type: 'fos_ckeditor' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'isPublished', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le contenu sur le site' }
+
+            edit:
+                fields:
+                    - titre
+                    - chapeau
+                    - auteur
+                    - { property: 'contenu', label: 'Contenu', type: 'fos_ckeditor' }
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'isPublished', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le contenu sur le site' }

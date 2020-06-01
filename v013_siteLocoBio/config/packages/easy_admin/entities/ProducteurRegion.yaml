@@ -1,0 +1,24 @@
+easy_admin:
+    entities:
+        ProducteurRegion:
+            class: App\Entity\ProducteurRegion
+            list:
+                title: 'Mes producteurs régionales'
+                fields:
+                    - nom
+                    - activite
+                    - {property: 'image_ProducteurRegion', label: 'Photo', type: 'image', base_path: '%app.path.image_ProducteurRegion%' }
+                    - adresse
+                actions:
+                    - { name: 'show', icon: 'eye', label: false }
+                    - { name: 'edit',, icon: 'edit', label: false }
+                    - { name: 'delete', icon: 'trash', label: false, title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter un producteur', icon: 'plus', title: 'Ajouter' }
+            form:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - createdAt

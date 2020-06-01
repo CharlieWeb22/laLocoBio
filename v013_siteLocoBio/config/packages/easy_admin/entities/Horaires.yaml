@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+        Horaires:
+            class: App\Entity\Horaires
+            list:
+                title: 'Les horaires du magasin'
+                fields:
+                    - { property: 'is_published', label: 'Statut' }
+                    - contenu
+                collapse_actions: true
+                actions:
+                    - { name: 'show', label: 'voir' }
+                    - { name: 'edit', label: 'modifier' }
+                    - { name: 'delete', label: 'supprimer', title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter une horaire', title: 'Ajouter' }
+
+            form:
+                title: 'Nouvelle Horaire'
+                fields:
+                    - { property: 'contenu', type: 'fos_ckeditor' }
+                    - { property: 'isPublished', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le contenu sur le site' }
+            edit:
+                title: 'Modification Horaire (#%%entity_id%%)'
+                fields:
+                    - { property: 'contenu', type: 'fos_ckeditor' }
+                    - { property: 'isPublished', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le contenu sur le site' }
+

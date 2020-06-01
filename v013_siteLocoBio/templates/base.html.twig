@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/style_final.css') }}" />
+        <script src="https://kit.fontawesome.com/baa06e70a1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+
+        
+        {% block body %}{% endblock %}
+        <!-- FOOTER -->
+<footer style="background-color:#333333; color: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 mt-5 pr-5">
+                <h3 class="mb-2">La Loco Bio</h3>
+                <p>Une Coopérative aux produits bio et éthiques</p>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+                    live the blind texts.</p>
+                <a href="{{ path('app_login') }}" style="color:white;display:block;" class="mb-2">espace privée</a>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('app_register') }}" style="color:white;display:block;">Créer un utilisateur</a>
+                {% endif %}
+                
+            </div>
+            <div class="col-lg-3 text-left mt-5">
+                <h3 class="mb-2">Menu</h3>
+                <ul class="list-unstyled" style="color: white;">
+                    <li><a href="cooperative.html" style="color: white;" class="py-2 d-block">La Coopérative</a>
+                    </li>
+                    <li><a href="producteurs.html" style="color: white;" class="py-2 d-block">Nos Producteurs</a>
+                    </li>
+                    <li><a href="catalogue.html" style="color: white;" class="py-2 d-block">Sur Commande</a></li>
+                    <li><a href="rendez_vous.html" style="color: white;" class="py-2 d-block">Le rendez-vous du
+                            mois</a></li>
+                    <li><a href="onvaplusloin.html" style="color: white;" class="py-2 d-block">On va plus loin</a>
+                    </li>
+                    <li><a href="contact.html" style="color: white;" class="py-2 d-block">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <h3 class="mb-2">Vous avez une question?</h3>
+                <div class="">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker"></i><span class="text ml-2">8 avenue de la gare, 16210
+                                Chalais</span></li>
+                        <li><i class="fas fa-phone-alt"></i><span class="text ml-2"> 05 45 78 67 44</span></li>
+                        <li><i class="fas fa-envelope"></i><span class="text ml-2">lalocobio@gmail.com</span></li>
+                    </ul>
+                </div>
+                <p class="text-center">Tenez-vous informé sur facebook</p>
+                <a class="d-flex justify-content-center" href="https://www.facebook.com/lalocobio/"
+                    target="_blank"><span><i class="fab fa-facebook fa-3x"></i></span></a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <p>
+                    2020 &copy; | Tous droits reservés</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+        {% block javascripts %}{% endblock %}
+         <!-- jquery-3.4.1.min.js en Local -->
+         <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+         <!-- bootstrap.bundle.min.js en Local -->
+         <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+
+    </body>
+</html>

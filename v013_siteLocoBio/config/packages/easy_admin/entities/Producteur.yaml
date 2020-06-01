@@ -1,0 +1,25 @@
+easy_admin:
+    entities:
+        Producteur:
+            class: App\Entity\Producteur
+            list:
+                title: 'Mes Producteurs locaux'
+                fields:
+                    - nom
+                    - activite
+                    - {property: 'image_producteur', label: 'Photo', type: 'image', base_path: '%app.path.image_producteur%' }
+                    - adresse
+                collapse_actions: true
+                actions:
+                    - { name: 'show', icon: 'eye', label: 'voir' }
+                    - { name: 'edit',, icon: 'edit', label: 'modifier' }
+                    - { name: 'delete', icon: 'trash', label: 'supprimer', title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter un producteur', icon: 'plus', title: 'Ajouter' }
+            form:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - createdAt
