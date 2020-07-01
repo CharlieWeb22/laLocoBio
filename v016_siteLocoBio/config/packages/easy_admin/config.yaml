@@ -1,0 +1,16 @@
+easy_admin:
+      site_name: 'ADMINISTRATION <em style="font-size:60%">LA LOCO BIO</em>'
+      design:
+          form_theme:
+            - "@EasyAdmin/form/bootstrap_4.html.twig"
+            - "@FOSCKEditor/Form/ckeditor_widget.html.twig"
+          assets:
+            favicon: '/assets/images/favicon.ico'
+      formats:
+        datetime: 'd/m/Y'
+      list:
+        actions:
+            - { name: 'show', icon: 'search', label: 'voir' }
+            - { name: 'edit',, icon: 'edit', label: 'modifier' }
+            - { name: 'delete', icon: 'trash', label: false, title: 'supprimer' }
+            - { name: 'new', label: 'Ajouter un article', icon: 'plus', title: 'Ajouter' }

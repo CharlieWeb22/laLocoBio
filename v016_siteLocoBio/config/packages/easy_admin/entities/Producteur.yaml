@@ -1,0 +1,35 @@
+easy_admin:
+    entities:
+        Producteur:
+            class: App\Entity\Producteur
+            list:
+                title: 'Mes Producteurs locaux'
+                fields:
+                    - { property: 'is_published', label: 'Statut' }
+                    - nom
+                    - activite
+                    - {property: 'image_producteur', label: 'Photo', type: 'image', base_path: '%app.path.image_producteur%' }
+                    - adresse
+
+                actions:
+                    - { name: 'show', icon: 'search', label: 'voir' }
+                    - { name: 'edit',, icon: 'eye', label: 'modifier' }
+                    - { name: 'delete', icon: 'trash', label: false, title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter un produit', icon: 'plus', title: 'Ajouter' }
+            form:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'isPublished', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le producteur sur le site' }
+            edit:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - createdAt
+                    - { property: 'isPublished', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le producteur sur le site' }

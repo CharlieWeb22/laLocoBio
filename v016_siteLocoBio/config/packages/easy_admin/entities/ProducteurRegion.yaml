@@ -1,0 +1,46 @@
+easy_admin:
+    entities:
+        ProducteurRegion:
+            class: App\Entity\ProducteurRegion
+            list:
+                title: 'Mes producteurs régionales'
+                fields:
+                    - { property: 'is_published', label: 'Statut' }
+                    - nom
+                    - activite
+                    - {property: 'image_ProducteurRegion', label: 'Photo', type: 'image', base_path: '%app.path.image_ProducteurRegion%' }
+                    - adresse
+                actions:
+                    - { name: 'show', icon: 'search', label: 'voir' }
+                    - { name: 'edit',, icon: 'eye', label: 'modifier' }
+                    - { name: 'delete', icon: 'trash', label: false, title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter un produit', icon: 'plus', title: 'Ajouter' }
+            form:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'is_published', type: 'checkbox', label: 'Statut', help: 'Cocher la case si vous souhaitez faire apparaître le producteur sur le site' }
+            edit:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'is_published', type: 'checkbox', label: 'Statut', help: 'Cocher la case si vous souhaitez faire apparaître le producteur sur le site' }
+
+            show:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'image_ProducteurRegion', label: 'Photo', type: 'image', base_path: '%app.path.image_ProducteurRegion%' }
+                    - { property: 'is_published', label: 'Statut' }
+                    - createdAt
+                    - updatedAt
+
+                    

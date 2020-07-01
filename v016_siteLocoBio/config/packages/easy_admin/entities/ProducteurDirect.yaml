@@ -1,0 +1,46 @@
+easy_admin:
+    entities:
+        ProducteurDirect:
+            class: App\Entity\ProducteurDirect
+            list:
+                title: 'Mes producteurs direct'
+                fields:
+                    - { property: 'is_published', label: 'Statut' }
+                    - nom
+                    - activite
+                    - {property: 'image_ProducteurDirect', label: 'Photo', type: 'image', base_path: '%app.path.image_ProducteurDirect%' }
+                    - adresse
+                actions:
+                    - { name: 'show', icon: 'search', label: 'voir' }
+                    - { name: 'edit',, icon: 'eye', label: 'modifier' }
+                    - { name: 'delete', icon: 'trash', label: false, title: 'supprimer' }
+                    - { name: 'new', label: 'Ajouter un produit', icon: 'plus', title: 'Ajouter' }
+            form:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'is_published', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le producteur sur le site' }
+            edit:
+                fields:
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'imageFile', type: 'vich_image', label: 'Photo' }
+                    - { property: 'is_published', type: 'checkbox', label: 'Publier', help: 'Cocher la case si vous souhaitez faire apparaître le producteurs sur le site' }
+
+            show:
+                fields:
+                    - id
+                    - nom
+                    - activite
+                    - description
+                    - adresse
+                    - { property: 'image_ProducteurDirect', label: 'Photo', type: 'image', base_path: '%app.path.image_ProducteurDirect%'  }
+                    - createdAt
+                    - updatedAt
+                    - { property: 'is_published', label: 'Statut' }
+
